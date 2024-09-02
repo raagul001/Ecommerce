@@ -1,0 +1,34 @@
+{% extends 'amazon/layouts/main.html' %}
+{% block title %}
+   Amazon Shopping
+{% endblock title %}
+
+{% block content %}
+<div>
+   {% include 'amazon/inc/slider.html' %}
+   <div class="container" style="margin-top: 70px;">
+      <div class="row cart-item">
+         <div class="col-12">
+            <h4 class="mb-3"> Offer Discount</h4>
+            <hr style="border-color:#b8bfc2;">
+         </div>
+         {% for x in products %}
+        <div class="col-md-4 col-lg-3">
+          <div class="card">
+            <img src="{{ x.product_image.url }}" class="card-image-top " alt="Products">
+            <a href="{% url 'product_details' x.customer.name x.name %}" class="description">
+              <div class="card-body">
+              <h5 class="card-title text-primary">{{ x.name }}</h5>
+              <p class="card-text">
+                <span class="float-start old_price"><s>Rs.{{ x.original_price | stringformat:'d'}}</s></span>
+                <span class="float-end new_price">Rs.{{ x.selling_price | stringformat:'d' }}</span>
+              </p>
+            </div>
+          </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+   </div>
+</div>
+{% endblock content %}
