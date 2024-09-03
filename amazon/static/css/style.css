@@ -40,24 +40,3 @@ body{
     right: 20px;
     z-index: 10;
 }
-
-.card-image-top{
-    height: 190px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.card {
-    --bs-card-height:350px;
-}
-  
-  .my-3 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-    
-  }
-
-
-  
-  
