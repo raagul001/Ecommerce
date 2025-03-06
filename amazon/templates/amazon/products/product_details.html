@@ -37,6 +37,7 @@
             <div class="my-3">
               {% if products.quantity > 0 %}
               <input type="hidden" value="{{products.id}}" id="pid">
+              {% csrf_token %}
                 <p>
                   <div class="input-group" style="width:150px">
                     <button class="input-group-text bg-success text-light" id="btnMinus" ><i class="fa fa-minus"></i></button>
